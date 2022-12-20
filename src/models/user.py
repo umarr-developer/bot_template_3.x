@@ -26,4 +26,4 @@ class User(Base):
         sql = select(cls).where(cls.user_id == user_id)
         async with db_session() as session:
             response = await session.execute(sql)
-        return response.fetchone()[0]
+        return response.fetchone()

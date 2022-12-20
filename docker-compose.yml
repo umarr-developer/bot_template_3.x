@@ -12,13 +12,12 @@ services:
     command: python3 app.py config.yml
 
   db:
-    image: postgres
+    image: postgres:latest
     restart: always
     environment:
       POSTGRES_PASSWORD: example
     volumes:
       - dbdata:/var/lib/postgresql/data/
-
 
 volumes:
   dbdata: null
